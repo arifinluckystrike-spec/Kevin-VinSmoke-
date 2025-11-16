@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusat Teknologi AI - Pembelajaran untuk Semua Usia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #007bff;
+        }
+        .age-group {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        /* Styling untuk form kontak dan pembayaran */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Styling untuk modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Styling untuk chatbot */
+        #chatbot {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+        }
+        #chatbot.show {
+            display: flex;
+        }
+        #chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        #chat-input {
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+        #chat-input input {
+            width: 80%;
+            padding: 5px;
+        }
+        #chat-input button {
+            width: 18%;
+            padding: 5px;
+        }
+        #chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            #chatbot {
+                width: 90%;
+                right: 5%;
+            }
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pusat Teknologi AI</h1>
+        <p>Pembelajaran Kecerdasan Buatan untuk Semua Usia: Dari Anak Kecil hingga Lansia</p>
+    </header>
+    
+    <nav>
+        <a href="#tentang">Tentang AI</a>
+        <a href="#usia">Pembelajaran per Usia</a>
+        <a href="#sumber">Sumber Daya</a>
+        <a href="#pembayaran">Pembayaran</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+    
+    <section id="tentang">
+        <h2>Apa Itu Kecerdasan Buatan (AI)?</h2>
+        <p>AI adalah teknologi yang memungkinkan mesin belajar dan berpikir seperti manusia. Di Pusat Teknologi AI, kami membantu semua orang memahami dan belajar AI dengan cara yang menyenangkan dan mudah.</p>
+        <!-- Ganti URL ini dengan gambar kustom Anda (misalnya, dari folder lokal: 'images/ai-intro.jpg' atau URL online) -->
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Ilustrasi AI dengan robot dan data" style="width:100%; max-width:600px; border-radius:8px;">
+    </section>
+    
+    <section id="usia">
+        <h2>Pembelajaran AI Berdasarkan Usia</h2>
+        
+        <div class="age-group">
+            <h3>Anak Kecil (5-12 Tahun)</h3>
+            <p>Pelajari AI melalui permainan dan cerita. Contoh: Robot yang membantu di rumah atau aplikasi gambar yang bisa "hidup".</p>
+            <!-- Ganti URL ini dengan gambar kustom Anda -->
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Anak belajar AI" style="width:100%; max-width:300px; border-radius:8px;">
+            <br><button onclick="openModal('anak')">Pelajari Lebih Lanjut</button>
+        </div>
+        
+        <div class="age-group">
+            <h3>Remaja (13-19 Tahun)</h3>
+            <p>Jelajahi coding AI, machine learning dasar, dan aplikasi seperti chatbot. Cocok untuk proyek sekolah atau hobi.</p>
+            <!-- Ganti URL ini dengan gambar kustom Anda -->
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Remaja coding AI" style="width:100%; max-width:300px; border-radius:8px;">
+            <br><button onclick="openModal('remaja')">Pelajari Lebih Lanjut</button>
+        </div>
+        
+        <div class="age-group">
+            <h3>Dewasa (20-60 Tahun)</h3>
+            <p>Tingkatkan keterampilan kerja dengan AI di bidang seperti bisnis, kesehatan, atau kreativitas. Kursus online gratis tersedia.</p>
+            <!-- Ganti URL ini dengan gambar kustom Anda -->
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dewasa belajar AI" style="width:100%; max-width:300px; border-radius:8px;">
+            <br><button onclick="openModal('dewasa')">Pelajari Lebih Lanjut</button>
+        </div>
+        
+        <div class="age-group">
+            <h3>Lansia (60+ Tahun)</h3>
+            <p>AI sederhana untuk kesehatan, komunikasi, dan hiburan. Contoh: Asisten suara untuk mengingatkan obat atau aplikasi video call.</p>
+            <!-- Ganti URL ini dengan gambar kustom Anda -->
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Lansia menggunakan AI" style="width:100%; max-width:300px; border-radius:8px;">
+            <br><button onclick="openModal('lansia')">Pelajari Lebih Lanjut</button>
+        </div>
+    </section>
+    
+    <section id="sumber">
+        <h2>Sumber Daya Pembelajaran</h2>
+        <ul>
+            <li><a href="https://www.coursera.org" target="_blank">Coursera - Kursus AI Gratis</a></li>
+            <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy - Pelajaran Dasar AI</a></li>
+            <li><a href="https://scratch.mit.edu" target="_blank">Scratch - Platform Coding untuk Anak</a></li>
+            <li>Buku: "AI for Everyone" oleh Andrew Ng</li>
+        </ul>
+    </section>
+    
+    <section id="pembayaran">
+        <h2>Pembayaran untuk Akses Premium</h2>
+        <p>Bayar untuk akses ke kursus AI eksklusif, materi premium, atau konsultasi. Pilih metode transfer favorit Anda. Harga mulai dari Rp50.000 untuk paket dasar.</p>
+        <form id="payment-form">
+            <select id="payment-method" required>
+                <option value="">Pilih Metode Transfer</option>
+                <option value="bank">Transfer Bank (BCA, Mandiri, BNI, dll.)</option>
+                <option value="gopay">GoPay</option>
+                <option value="ovo">OVO</option>
+                <option value="dana">Dana</option>
+                <option value="shopeepay">ShopeePay</option>
+                <option value="qris">QRIS</option>
+                <option value="paypal">PayPal (Internasional)</option>
+            </select>
+            <input type="text" id="account-number" placeholder="Nomor Rekening/ID E-wallet (contoh: 1234567890)" required>
+            <input type="number" id="amount" placeholder="Jumlah Pembayaran (Rp)" min="50000" required>
+            <textarea id="notes" placeholder="Catatan tambahan (opsional)" rows="3"></textarea>
+            <button type="button" onclick="processPayment()">Bayar Sekarang</button>
+        </form>
+        <p><strong>Catatan:</strong> Ini simulasi. Untuk pembayaran nyata, integrasikan dengan gateway seperti Midtrans.</p>
+    </section>
+    
+    <section id="kontak">
+        <h2>Hubungi Kami</h2>
+        <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+            <input type="text" name="name" placeholder="Nama Anda" required>
+            <input type="email" name="email" placeholder="Email Anda" required>
+            <textarea name="message" placeholder="Pesan Anda" rows="5" required></textarea>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+        <p>Ikuti kami di media sosial untuk update terbaru!</p>
+    </section>
+    
+    <!-- Modal untuk penjelasan lengkap -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Konten modal akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal untuk konfirmasi pembayaran -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <div id="payment-modal-body">
+                <!-- Konten modal pembayaran akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Pusat Teknologi AI. Semua hak dilindungi.</p>
+    </footer>
+    
+    <!-- Chatbot AI Sederhana -->
+    <div id="chatbot">
+        <div id="chat-messages">
+            <p><strong>Bot AI:</strong> Halo! Saya bot AI Pusat Teknologi. Apa yang ingin Anda tanyakan tentang AI?</p>
+        </div>
+        <div id="chat-input">
+            <input type="text" id="user-input" placeholder="Ketik pesan...">
+            <button onclick="sendMessage()">Kirim</button>
+        </div>
+    </div>
+    <button id="chat-toggle" onclick="toggleChat()">💬</button>
+    
+    <script>
+        // Script untuk scroll ke bagian
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').substring(1);
+                scrollToSection(target);
+            });
+        });
+        
+        // Script untuk modal penjelasan
+        function openModal(ageGroup) {
+            const modal = document.getElementById('myModal');
+            const modalBody = document.getElementById('modal-body');
+            let content = '';
+            if (ageGroup === 'anak') {
+                content = `
+                    <h2>AI untuk Anak Kecil (5-12 Tahun)</h2>
+                    <p>AI bisa diajarkan melalui cerita dan permainan agar menyenangkan. Contoh aplikasi: Scratch Jr untuk membuat animasi sederhana.</p>
+                    <ul>
+                        <li><strong>Tips:</strong> Mulai dengan video edukasi seperti "AI for Kids" di YouTube.</li>
+                        <li><strong>Langkah:</strong> 1. Jelaskan AI sebagai "robot pintar". 2. Gunakan app seperti Cozmo robot. 3. Lakukan eksperimen sederhana, seperti menggambar dengan AI.</li>
+                        <li><strong>Manfaat:</strong> Meningkatkan kreativitas dan pemahaman teknologi sejak dini.</li>
+                    </ul>
+                `;
+            } else if (ageGroup === 'remaja') {
+                content = `
+                    <h2>AI untuk Remaja (13-19 Tahun)</h2>
+                    <p>Fokus pada coding dan proyek praktis. Contoh: Buat chatbot sederhana dengan Python.</p>
+                    <ul>
+                        <li><strong>Tips:</strong> Ikuti kursus di Codecademy atau edX.</li>
+                        <li><strong>Langkah:</strong> 1. Pelajari dasar programming. 2. Eksplorasi machine learning dengan TensorFlow for Kids. 3. Buat proyek seperti app deteksi gambar.</li>
+                        <li><strong>Manfaat:</strong> Siap untuk karir di tech atau proyek sekolah.</li>
+                    </ul>
+                `;
+            } else if (ageGroup === 'dewasa') {
+                content = `
+                    <h2>AI untuk Dewasa (
